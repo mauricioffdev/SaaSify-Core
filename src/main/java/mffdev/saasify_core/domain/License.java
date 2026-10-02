@@ -9,8 +9,8 @@ public record License(
         String licenseKey,
         String customerEmail,
         LicenseStatus status,
-        LocalDateTime expiresAt,
-        LocalDateTime createdAt
+        LocalDateTime createdAt,
+        LocalDateTime expiresAt
 ) {
     public enum LicenseStatus {
         ACTIVE,

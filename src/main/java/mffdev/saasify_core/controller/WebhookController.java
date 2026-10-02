@@ -1,6 +1,6 @@
 package mffdev.saasify_core.controller;
 
-import jakarta.validation.Valid; // <-- Importante
+import jakarta.validation.Valid;
 import mffdev.saasify_core.domain.License;
 import mffdev.saasify_core.domain.WebhookPayload;
 import mffdev.saasify_core.service.LicenseService;
