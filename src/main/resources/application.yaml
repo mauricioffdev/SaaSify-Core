@@ -4,6 +4,9 @@ server:
 spring:
   application:
     name: saasify-core
+  threads:
+    virtual:
+      enabled: true
   datasource:
     url: jdbc:postgresql://localhost:5432/saasify_db
     username: postgres
@@ -11,11 +14,18 @@ spring:
   jpa:
     hibernate:
       ddl-auto: update
-    show-sql: true
+    open-in-view: false
+    show-sql: ${SHOW_SQL:false}
     properties:
       hibernate:
         format_sql: true
     database-platform: org.hibernate.dialect.PostgreSQLDialect
+
+saasify:
+  security:
+    api-keys: ${SAASIFY_API_KEYS:}
+    webhook-secret: ${SAASIFY_WEBHOOK_SECRET:}
+    webhook-tolerance: ${SAASIFY_WEBHOOK_TOLERANCE:5m}
 
 management:
   endpoints:
@@ -25,8 +35,3 @@ management:
   endpoint:
     health:
       show-details: always
-
-      spring:
-        threads:
-          virtual:
-            enabled: true

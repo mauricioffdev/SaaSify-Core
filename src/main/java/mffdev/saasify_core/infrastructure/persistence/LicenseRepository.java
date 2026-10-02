@@ -11,4 +11,7 @@ public interface LicenseRepository extends JpaRepository<LicenseEntity, UUID> {
 
     // Metodo customizado para buscar uma licença pela ‘string’ da chave (ex: "SAAS-1234ABCD")
     Optional<LicenseEntity> findByLicenseKey(String licenseKey);
+
+    // Usado pelo service para não gerar uma chave que já exista (coluna é unique)
+    boolean existsByLicenseKey(String licenseKey);
 }

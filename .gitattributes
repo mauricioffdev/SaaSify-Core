@@ -1,2 +1,6 @@
+# Normaliza fim de linha de todo arquivo de texto no repositorio, evitando
+# diffs inteiros causados apenas por CRLF/LF (principalmente em Windows/OneDrive).
+* text=auto
+
 /mvnw text eol=lf
 *.cmd text eol=crlf
